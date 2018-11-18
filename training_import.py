@@ -20,7 +20,7 @@ lr=default(lr,0.000001,float)
 epochs = input("Epochs(leave blank for default - 2000):")
 epochs = default(epochs,2000,int)
 
-validation_split = input("validation_split(leave blank for default - 2000):")
+validation_split = input("validation_split(leave blank for default - 0.2):")
 validation_split = default(validation_split,0.2,float)
 
 
@@ -59,3 +59,10 @@ plt.title('Training and validation loss')
 plt.legend()
 plt.show()
 
+import pickle
+
+if not os.path.exists('traininghistory/'):
+    os.makedirs('traininghistory/')
+
+with open('traininghistory/trainHistoryCheckpointFinal+timestr', 'wb') as file_pi:
+        pickle.dump(train.history, file_pi)
