@@ -1,5 +1,5 @@
 from load_data import data
-
+from scipy import ndimage
 from model_original import network
 
 from keras.callbacks import ModelCheckpoint
