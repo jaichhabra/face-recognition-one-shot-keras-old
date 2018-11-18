@@ -1,42 +1,13 @@
 
-# coding: utf-8
-
-# In[6]:
-
-
 import numpy as np
-
-
-# In[7]:
-
 
 import tensorflow as tf
 
-
-# In[8]:
-
-
 import keras
-
-
-# In[9]:
-
 
 training_dir = "./clean_data"
 testing_dir = "./test"
 batch_size = 400
-
-
-# In[21]:
-
-
-# import matplotlib.pyplot as plt
-# %matplotlib inline
-
-
-# In[27]:
-
-
 
 from keras.preprocessing.image import ImageDataGenerator
 from random import randint
@@ -44,7 +15,6 @@ from collections import Counter
 
 
 def data(num_of_images=40,width=105,height=105):
-#     image_size = width,height
 
     train_datagen = ImageDataGenerator(rescale=1./255,shear_range=0.2,        zoom_range=0.2,horizontal_flip=True)
 
@@ -74,29 +44,4 @@ def data(num_of_images=40,width=105,height=105):
     print(Counter(train_output))
     return train_left_input,train_right_input,train_output
 
-
-# In[23]:
-
-
-# train_left_input,train_right_input,train_output=data(400)
-
-
-# In[24]:
-
-
 from collections import Counter
-# for i in range(200):
-#     print(int(train_output[i]),end="")
-# Counter(train_output)
-
-
-# In[26]:
-
-
-# for i in range(100,120):
-#     plt.imshow(train_left_input[i])
-#     plt.show()
-#     plt.imshow(train_right_input[i])
-#     plt.show()
-#     print(train_output[i])
-
